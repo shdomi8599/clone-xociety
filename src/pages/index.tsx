@@ -1,7 +1,8 @@
+import Head from "next/head";
+
 import Header from "@/components/common/Header";
 import MainSection from "@/components/section/MainSection";
-import SubSection from "@/components/section/SubSection";
-import Head from "next/head";
+import SubSection1 from "@/components/section/SubSection1";
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
       </Head>
       <Header />
       <MainSection />
-      <SubSection />
+      <SubSection1 />
     </>
   );
 };
