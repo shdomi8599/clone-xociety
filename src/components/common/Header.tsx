@@ -20,52 +20,16 @@ const Header = () => {
       position="fixed"
     >
       <Container maxWidth={false}>
-        <Toolbar
-          sx={{
-            height: "90px",
-            xs: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: "99",
-            paddingRight: "60px",
-          }}
-          disableGutters
-        >
+        <Toolbar sx={toolBarStyle} disableGutters>
           <Image src={HeaderLogo} height={61} width={168} alt="logo" />
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: {
-                md: "flex",
-                justifyContent: "flex-end",
-                gap: "60px",
-                paddingRight: "50px",
-              },
-            }}
-          >
+          <Box sx={boxStyle}>
             {SECTIONS.map((section) => (
-              <Button
-                key={section}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontWeight: "800",
-                }}
-              >
+              <Button key={section} sx={buttonStyle}>
                 {section}
               </Button>
             ))}
           </Box>
-          <Fab
-            sx={{
-              padding: "0",
-              background: "black",
-              a: { color: "white", margin: "18px", fontWeight: "800" },
-              img: { paddingRight: "10px" },
-            }}
-            variant="extended"
-          >
+          <Fab sx={fabStyle} variant="extended">
             <Link href={"/"}>ENTER APP</Link>
             <Image src={EnterApp} alt="enter_app" width={30} />
           </Fab>
@@ -75,3 +39,36 @@ const Header = () => {
   );
 };
 export default Header;
+
+const toolBarStyle = {
+  height: "90px",
+  xs: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: "99",
+  paddingRight: "60px",
+};
+
+const boxStyle = {
+  flexGrow: 1,
+  display: {
+    md: "flex",
+    justifyContent: "flex-end",
+    gap: "60px",
+    paddingRight: "50px",
+  },
+};
+
+const buttonStyle = {
+  my: 2,
+  color: "black",
+  display: "block",
+  fontWeight: "800",
+};
+
+const fabStyle = {
+  padding: "0",
+  background: "black",
+  a: { color: "white", margin: "18px", fontWeight: "800" },
+  img: { paddingRight: "10px" },
+};
