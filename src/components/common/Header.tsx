@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import styled from "@emotion/styled";
 
 import HeaderLogo from "../../../public/logo/xociety-header-bi.svg";
 import EnterApp from "../../../public/icon/enter_app.svg";
@@ -15,63 +16,67 @@ import { SECTIONS } from "@/constants/constants";
 
 const Header = () => {
   return (
-    <AppBar sx={appBarStyle}>
+    <AppBarBox>
       <Container maxWidth={false}>
-        <Toolbar sx={toolBarStyle} disableGutters>
+        <ToolBarBox disableGutters>
           <Image src={HeaderLogo} height={61} width={168} alt="logo" />
-          <Box sx={boxStyle}>
+          <NavItemBox>
             {SECTIONS.map((section) => (
-              <Button key={section} sx={buttonStyle}>
-                {section}
-              </Button>
+              <NavItem key={section}>{section}</NavItem>
             ))}
-          </Box>
-          <Fab sx={fabStyle} variant="extended">
+          </NavItemBox>
+          <AppBtn variant="extended">
             <Link href={"/"}>ENTER APP</Link>
             <Image src={EnterApp} alt="enter_app" width={30} />
-          </Fab>
-        </Toolbar>
+          </AppBtn>
+        </ToolBarBox>
       </Container>
-    </AppBar>
+    </AppBarBox>
   );
 };
 export default Header;
 
-const appBarStyle = {
-  background: "var(--main-bg);",
-  mixBlendMode: "overlay",
-  position: "fixed",
-};
+const AppBarBox = styled(AppBar)`
+  background: var(--main-bg);
+  mix-blend-mode: overlay;
+  position: fixed;
+`;
 
-const toolBarStyle = {
-  height: "90px",
-  xs: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  zIndex: "99",
-  paddingRight: "60px",
-};
+const ToolBarBox = styled(Toolbar)`
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  padding-right: 60px;
+`;
 
-const boxStyle = {
-  flexGrow: 1,
-  display: {
-    md: "flex",
-    justifyContent: "flex-end",
-    gap: "60px",
-    paddingRight: "50px",
-  },
-};
+const NavItemBox = styled(Box)`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 60px;
+  padding-right: 50px;
+`;
 
-const buttonStyle = {
-  my: 2,
-  color: "black",
-  display: "block",
-  fontWeight: "800",
-};
+const NavItem = styled(Button)`
+  color: black;
+  display: block;
+  font-weight: 800;
+  margin: 16px 0px;
+`;
 
-const fabStyle = {
-  padding: "0",
-  background: "black",
-  a: { color: "white", margin: "18px", fontWeight: "800" },
-  img: { paddingRight: "10px" },
-};
+const AppBtn = styled(Fab)`
+  padding: 0;
+  background: black;
+
+  a {
+    color: white;
+    margin: 18px;
+    font-weight: 800;
+  }
+
+  img {
+    padding-right: 10px;
+  }
+`;
