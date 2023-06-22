@@ -16,32 +16,49 @@ import { SECTIONS } from "@/constants/constants";
 
 const Header = () => {
   return (
-    <AppBarBox>
-      <Container maxWidth={false}>
-        <ToolBarBox disableGutters>
-          <Image src={HeaderLogo} height={61} width={168} alt="logo" />
-          <NavItemBox>
-            {SECTIONS.map((section) => (
-              <NavItem key={section}>{section}</NavItem>
-            ))}
-          </NavItemBox>
-          <AppBtn variant="extended">
-            <Link href={"https://app.xociety.io/"} target="_blank">
-              enter app
-            </Link>
-            <Image src={EnterApp} alt="enter_app" width={30} />
-          </AppBtn>
-        </ToolBarBox>
-      </Container>
-    </AppBarBox>
+    <>
+      <BackBox />
+      <AppBarBox>
+        <Container maxWidth={false}>
+          <ToolBarBox disableGutters>
+            <Image src={HeaderLogo} height={61} width={168} alt="logo" />
+            <NavItemBox>
+              {SECTIONS.map((section) => (
+                <NavItem key={section}>{section}</NavItem>
+              ))}
+            </NavItemBox>
+            <AppBtn variant="extended">
+              <Link href={"https://app.xociety.io/"} target="_blank">
+                enter app
+              </Link>
+              <Image src={EnterApp} alt="enter_app" width={30} />
+            </AppBtn>
+          </ToolBarBox>
+        </Container>
+      </AppBarBox>
+    </>
   );
 };
 export default Header;
 
-const AppBarBox = styled(AppBar)`
-  background: var(--main-bg);
-  mix-blend-mode: overlay;
+const BackBox = styled(Box)`
   position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  mix-blend-mode: overlay;
+  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+`;
+
+const AppBarBox = styled(AppBar)`
+  position: fixed;
+  background: none;
+  box-shadow: none;
+  z-index: 99;
 `;
 
 const ToolBarBox = styled(Toolbar)`
@@ -49,7 +66,6 @@ const ToolBarBox = styled(Toolbar)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99;
   padding-right: 60px;
 `;
 
@@ -65,7 +81,6 @@ const NavItem = styled(Button)`
   color: black;
   display: block;
   font-weight: 800;
-  margin: 16px 0px;
 `;
 
 const AppBtn = styled(Fab)`
