@@ -36,11 +36,10 @@ const Header = () => {
             sx={{
               flexGrow: 1,
               display: {
-                xs: "none",
                 md: "flex",
                 justifyContent: "flex-end",
                 gap: "60px",
-                paddingRight: "60px",
+                paddingRight: "50px",
               },
             }}
           >
@@ -60,18 +59,14 @@ const Header = () => {
           </Box>
           <Fab
             sx={{
-              display: {
-                md: "flex",
-                gap: "10px",
-              },
+              padding: "0",
               background: "black",
-              fontWeight: "800",
+              a: { color: "white", margin: "18px", fontWeight: "800" },
+              img: { paddingRight: "10px" },
             }}
             variant="extended"
           >
-            <Link style={{ color: "white" }} href={"/"}>
-              ENTER APP
-            </Link>
+            <Link href={"/"}>ENTER APP</Link>
             <Image src={EnterApp} alt="enter_app" width={30} />
           </Fab>
         </Toolbar>
