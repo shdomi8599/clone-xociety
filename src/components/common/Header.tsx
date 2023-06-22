@@ -26,7 +26,7 @@ const Header = () => {
             ))}
           </NavItemBox>
           <AppBtn variant="extended">
-            <Link href={"/"}>ENTER APP</Link>
+            <Link href={"/"}>enter app</Link>
             <Image src={EnterApp} alt="enter_app" width={30} />
           </AppBtn>
         </ToolBarBox>
@@ -74,6 +74,7 @@ const AppBtn = styled(Fab)`
     color: white;
     margin: 18px;
     font-weight: 800;
+    text-transform: uppercase;
   }
 
   img {
