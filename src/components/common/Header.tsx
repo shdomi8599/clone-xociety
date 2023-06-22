@@ -26,7 +26,9 @@ const Header = () => {
             ))}
           </NavItemBox>
           <AppBtn variant="extended">
-            <Link href={"/"}>enter app</Link>
+            <Link href={"https://app.xociety.io/"} target="_blank">
+              enter app
+            </Link>
             <Image src={EnterApp} alt="enter_app" width={30} />
           </AppBtn>
         </ToolBarBox>
