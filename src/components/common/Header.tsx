@@ -2,9 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "@emotion/styled";
 
-import HeaderLogo from "../../../public/logo/xociety-header-bi.svg";
-import EnterApp from "../../../public/icon/enter_app.svg";
-
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -21,7 +18,12 @@ const Header = () => {
       <AppBarBox>
         <Container maxWidth={false}>
           <ToolBarBox disableGutters>
-            <Image src={HeaderLogo} height={61} width={168} alt="logo" />
+            <Image
+              src={"/logo/xociety-header-bi.svg"}
+              height={61}
+              width={168}
+              alt="logo"
+            />
             <NavItemBox>
               {SECTIONS.map((section) => (
                 <NavItem key={section}>{section}</NavItem>
@@ -31,7 +33,12 @@ const Header = () => {
               <Link href={"https://app.xociety.io/"} target="_blank">
                 enter app
               </Link>
-              <Image src={EnterApp} alt="enter_app" width={30} />
+              <Image
+                src={"/icon/enter_app.svg"}
+                alt="enter_app"
+                width={30}
+                height={30}
+              />
             </AppBtn>
           </ToolBarBox>
         </Container>
