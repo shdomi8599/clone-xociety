@@ -6,7 +6,7 @@ const MainSection = () => {
 
 export default MainSection;
 
-const Box = styled.div`
+const Box = styled.section`
   height: calc(100vh + 100px);
   background: #d66f6f;
 `;

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 import { ReactNode } from "react";
 
 type Props = {
@@ -13,7 +14,7 @@ const SubSectionForm = ({ height, zIndex, children }: Props) => {
 
 export default SubSectionForm;
 
-const Box = styled.div<Props>`
+const Box = styled.section<Props>`
   width: 100%;
   height: ${({ height }) => `${height}px`};
   position: relative;
