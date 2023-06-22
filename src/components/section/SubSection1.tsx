@@ -1,29 +1,12 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
-import { useEffect, useRef } from "react";
+
+import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
 
 const SubSection1 = () => {
-  const target = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const boxOffsetTop = target.current?.scrollHeight || 0;
-      const scrollY = window.scrollY;
-
-      const isView = scrollY > boxOffsetTop - 700;
-
-      target.current?.classList.toggle("animate", isView);
-      target.current?.classList.toggle("reverse-animate", !isView);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const { target } = useScrollClassToggle();
 
   return (
     <SubSectionForm height={1181} zIndex={1}>
@@ -43,24 +26,6 @@ const LUImage = styled(Image)`
   z-index: 1;
 `;
 
-const animateBackground = keyframes`
-  0% {
-    background-position: -100px;
-  }
-  100% {
-    background-position: 0px;
-  }
-`;
-
-const reverseAnimateBackground = keyframes`
-  0% {
-    background-position: 0px;
-  }
-  100% {
-    background-position: -100px;
-  }
-`;
-
 const Box = styled.div`
   display: flex;
   align-items: center;
@@ -70,14 +35,4 @@ const Box = styled.div`
   margin-right: -100px;
   background-position: -100px;
   clip-path: polygon(0 110px, 100% 0, 100% 100%, 0 100%);
-
-  &.animate {
-    background-position: 0px;
-    animation: ${animateBackground} 0.3s linear;
-  }
-
-  &.reverse-animate {
-    background-position: -100px;
-    animation: ${reverseAnimateBackground} 0.3s linear;
-  }
 `;
