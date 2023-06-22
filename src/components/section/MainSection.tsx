@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const MainSection = () => {
-  return <Box>메인</Box>;
+  return <Box></Box>;
 };
 
 export default MainSection;
