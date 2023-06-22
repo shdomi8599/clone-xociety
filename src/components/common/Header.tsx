@@ -15,10 +15,7 @@ import { SECTIONS } from "@/constants/constants";
 
 const Header = () => {
   return (
-    <AppBar
-      sx={{ background: "var(--main-bg);", mixBlendMode: "overlay" }}
-      position="fixed"
-    >
+    <AppBar sx={appBarStyle}>
       <Container maxWidth={false}>
         <Toolbar sx={toolBarStyle} disableGutters>
           <Image src={HeaderLogo} height={61} width={168} alt="logo" />
@@ -39,6 +36,12 @@ const Header = () => {
   );
 };
 export default Header;
+
+const appBarStyle = {
+  background: "var(--main-bg);",
+  mixBlendMode: "overlay",
+  position: "fixed",
+};
 
 const toolBarStyle = {
   height: "90px",
