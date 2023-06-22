@@ -13,7 +13,7 @@ const SubSection1 = () => {
       const boxOffsetTop = target.current?.scrollHeight || 0;
       const scrollY = window.scrollY;
 
-      const isView = scrollY > boxOffsetTop - 400;
+      const isView = scrollY > boxOffsetTop - 700;
 
       target.current?.classList.toggle("animate", isView);
       target.current?.classList.toggle("reverse-animate", !isView);
