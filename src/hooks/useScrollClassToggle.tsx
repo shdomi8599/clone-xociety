@@ -2,16 +2,16 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   numberPageIndex: number;
-  wantTop: number;
 };
 
-export const useScrollClassToggle = ({ numberPageIndex, wantTop }: Props) => {
+export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
   const target = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
+      const targetTop = target.current?.getBoundingClientRect().y;
 
-      const isView = scrollY > wantTop;
+      const isView = Math.abs(targetTop as number) < 500;
 
       const isOdd = numberPageIndex % 2 === 1;
 
