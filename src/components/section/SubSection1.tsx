@@ -6,7 +6,7 @@ import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 import SubSectionForm from "./SubSectionForm";
 
 const SubSection1 = () => {
-  const { target } = useScrollClassToggle();
+  const { target } = useScrollClassToggle({ type: "odd" });
 
   return (
     <SubSectionForm height={1181} zIndex={1}>
@@ -20,9 +20,8 @@ export default SubSection1;
 
 const LUImage = styled(Image)`
   position: absolute;
-  top: 0;
+  top: 14px;
   left: 0;
-  margin-top: 14px;
   z-index: 1;
 `;
 
