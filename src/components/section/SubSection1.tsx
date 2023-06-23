@@ -22,7 +22,7 @@ const LUImage = styled(Image)`
   position: absolute;
   top: 14px;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Box = styled.div`
