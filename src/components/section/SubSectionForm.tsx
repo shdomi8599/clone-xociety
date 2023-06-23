@@ -20,5 +20,5 @@ const Box = styled.section<Props>`
   position: relative;
   z-index: ${({ zIndex }) => zIndex};
   margin-top: -110px;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
