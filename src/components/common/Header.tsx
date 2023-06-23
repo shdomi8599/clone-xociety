@@ -87,18 +87,28 @@ const NavItemBox = styled(Box)`
 const NavItem = styled(Button)`
   color: black;
   display: block;
-  font-weight: 800;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
 `;
 
 const AppBtn = styled(Fab)`
   padding: 0;
   background: black;
 
+  :hover {
+    background: black;
+  }
+
   a {
     color: white;
     margin: 18px;
     font-weight: 800;
     text-transform: uppercase;
+
+    :hover {
+      color: yellow;
+    }
   }
 
   img {
