@@ -10,7 +10,7 @@ const SubSection4 = () => {
 
   return (
     <SubSectionForm height={1191} zIndex={4}>
-      <LUImage src={"/04/04-LU.png"} alt="LU" width={304} height={97} />
+      <LUImage src={"/04/04-LU.png"} alt="LU" width={216} height={125} />
       <Box ref={target}></Box>
     </SubSectionForm>
   );
