@@ -6,7 +6,7 @@ import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 import SubSectionForm from "./SubSectionForm";
 
 const SubSection2 = () => {
-  const { target } = useScrollClassToggle({ type: "even" });
+  const { target } = useScrollClassToggle({ type: "even", wantTop: 1300 });
 
   return (
     <SubSectionForm height={1191} zIndex={2}>
