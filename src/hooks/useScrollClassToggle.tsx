@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 
 type Props = {
-  type: "odd" | "even";
+  numberPageIndex: number;
   wantTop: number;
 };
 
-export const useScrollClassToggle = ({ type, wantTop }: Props) => {
+export const useScrollClassToggle = ({ numberPageIndex, wantTop }: Props) => {
   const target = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +13,9 @@ export const useScrollClassToggle = ({ type, wantTop }: Props) => {
 
       const isView = scrollY > wantTop;
 
-      if (type === "odd") {
+      const isOdd = numberPageIndex % 2 === 1;
+
+      if (isOdd) {
         target.current?.classList.toggle("odd-animate", isView);
         target.current?.classList.toggle("odd-reverse-animate", !isView);
       } else {

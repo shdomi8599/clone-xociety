@@ -10,7 +10,7 @@ const pageIndex = "04";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection4 = () => {
-  const { target } = useScrollClassToggle({ type: "even", wantTop: 3600 });
+  const { target } = useScrollClassToggle({ numberPageIndex, wantTop: 3600 });
 
   return (
     <SubSectionForm height={1191} zIndex={numberPageIndex}>
