@@ -15,13 +15,15 @@ export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
 
       const isOdd = numberPageIndex % 2 === 1;
 
-      if (isOdd) {
-        target.current?.classList.toggle("odd-animate", isView);
-        target.current?.classList.toggle("odd-reverse-animate", !isView);
-      } else {
-        target.current?.classList.toggle("even-animate", isView);
-        target.current?.classList.toggle("even-reverse-animate", !isView);
-      }
+      target.current?.classList.toggle(
+        isOdd ? "odd-animate" : "even-animate",
+        isView
+      );
+
+      target.current?.classList.toggle(
+        isOdd ? "odd-reverse-animate" : "even-reverse-animate",
+        !isView
+      );
     };
 
     window.addEventListener("scroll", handleScroll);
