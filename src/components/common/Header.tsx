@@ -10,14 +10,14 @@ import Button from "@mui/material/Button";
 
 import { Fab } from "@mui/material";
 import { SECTIONS } from "@/constants/constants";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
 
-  const handleScroll = useCallback(() => {
+  const handleScroll = () => {
     setScrollHeight(window.scrollY);
-  }, []);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
