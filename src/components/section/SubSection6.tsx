@@ -4,11 +4,15 @@ import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
 
+const pageIndex = "06";
+
+const numberPageIndex = Number(pageIndex);
+
 const SubSection6 = () => {
   const { target } = useScrollClassToggle({ type: "even", wantTop: 6000 });
 
   return (
-    <SubSectionForm height={1191} zIndex={6}>
+    <SubSectionForm height={1191} zIndex={numberPageIndex}>
       <Box ref={target}></Box>
     </SubSectionForm>
   );
@@ -21,7 +25,7 @@ const Box = styled.div`
   flex-direction: row-reverse;
   align-items: center;
   height: 100%;
-  background: url("/06/06.webp") no-repeat center center;
+  background: url("/${pageIndex}/${pageIndex}.webp") no-repeat center center;
   background-size: cover;
   margin-left: -100px;
   clip-path: polygon(0px 0px, 0px 100%, 40200px 100%);

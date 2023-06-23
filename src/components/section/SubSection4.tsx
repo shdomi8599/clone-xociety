@@ -5,12 +5,21 @@ import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
 
+const pageIndex = "04";
+
+const numberPageIndex = Number(pageIndex);
+
 const SubSection4 = () => {
   const { target } = useScrollClassToggle({ type: "even", wantTop: 3600 });
 
   return (
-    <SubSectionForm height={1191} zIndex={4}>
-      <LUImage src={"/04/04-LU.png"} alt="LU" width={216} height={125} />
+    <SubSectionForm height={1191} zIndex={numberPageIndex}>
+      <LUImage
+        src={`/${pageIndex}/${pageIndex}-LU.png`}
+        alt="LU"
+        width={216}
+        height={125}
+      />
       <Box ref={target}></Box>
     </SubSectionForm>
   );
@@ -22,7 +31,7 @@ const LUImage = styled(Image)`
   position: absolute;
   top: 20px;
   left: 51px;
-  z-index: 5;
+  z-index: ${numberPageIndex + 1};
 `;
 
 const Box = styled.div`
@@ -30,7 +39,7 @@ const Box = styled.div`
   flex-direction: row-reverse;
   align-items: center;
   height: 100%;
-  background: url("/04/04.webp") no-repeat center center;
+  background: url("/${pageIndex}/${pageIndex}.webp") no-repeat center center;
   background-size: cover;
   margin-left: -100px;
   clip-path: polygon(0px 0px, 0px 100%, 30200px 100%);
