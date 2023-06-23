@@ -10,15 +10,28 @@ import Button from "@mui/material/Button";
 
 import { Fab } from "@mui/material";
 import { SECTIONS } from "@/constants/constants";
+import { useCallback, useEffect, useState } from "react";
 
 const Header = () => {
+  const [scrollHeight, setScrollHeight] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    setScrollHeight(window.scrollY);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <BackBox />
       <AppBarBox>
         <Container maxWidth={false}>
           <ToolBarBox disableGutters>
-            <Image
+            <LogoImage
+              scrollHeight={scrollHeight}
               src={"/logo/xociety-header-bi.svg"}
               height={61}
               width={168}
@@ -74,6 +87,14 @@ const ToolBarBox = styled(Toolbar)`
   justify-content: center;
   align-items: center;
   padding-right: 60px;
+`;
+
+type LogoImageProps = {
+  scrollHeight: number;
+};
+
+const LogoImage = styled(Image)<LogoImageProps>`
+  opacity: ${({ scrollHeight }) => (scrollHeight > 600 ? 0 : 1)};
 `;
 
 const NavItemBox = styled(Box)`
