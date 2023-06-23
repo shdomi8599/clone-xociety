@@ -12,7 +12,7 @@ export const useScrollClassToggle = ({ type }: Props) => {
       const boxOffsetTop = target.current?.getBoundingClientRect().y || 0;
       const scrollY = window.scrollY;
 
-      const isView = scrollY > boxOffsetTop + 600;
+      const isView = scrollY > boxOffsetTop + 500;
 
       if (type === "odd") {
         target.current?.classList.toggle("odd-animate", isView);
