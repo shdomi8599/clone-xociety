@@ -1,17 +1,26 @@
 import { useEffect, useRef } from "react";
 
-export const useScrollClassToggle = () => {
+type Props = {
+  type: "odd" | "even";
+};
+
+export const useScrollClassToggle = ({ type }: Props) => {
   const target = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const boxOffsetTop = target.current?.scrollHeight || 0;
+      const boxOffsetTop = target.current?.getBoundingClientRect().y || 0;
       const scrollY = window.scrollY;
 
-      const isView = scrollY > boxOffsetTop - 700;
+      const isView = scrollY > boxOffsetTop + 600;
 
-      target.current?.classList.toggle("animate", isView);
-      target.current?.classList.toggle("reverse-animate", !isView);
+      if (type === "odd") {
+        target.current?.classList.toggle("odd-animate", isView);
+        target.current?.classList.toggle("odd-reverse-animate", !isView);
+      } else {
+        target.current?.classList.toggle("even-animate", isView);
+        target.current?.classList.toggle("even-reverse-animate", !isView);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
