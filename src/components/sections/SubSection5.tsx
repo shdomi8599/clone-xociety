@@ -81,5 +81,6 @@ const ItemBgBox = styled.div`
     center;
   height: 80%;
   width: 100%;
+  margin-bottom: 200px;
   position: absolute;
 `;
