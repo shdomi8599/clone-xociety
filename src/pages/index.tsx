@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Fragment } from "react";
 
 import { SUB_SECTION_ITEMS } from "@/constants/constants";
 
@@ -13,7 +14,9 @@ const Home = () => {
       </Head>
       <Header />
       <MainSection />
-      {SUB_SECTION_ITEMS.map((item) => item)}
+      {SUB_SECTION_ITEMS.map((item, index) => (
+        <Fragment key={index}>{item}</Fragment>
+      ))}
     </>
   );
 };
