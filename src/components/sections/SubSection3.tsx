@@ -5,7 +5,6 @@ import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 import SubSectionLayout from "./SubSectionLayout";
 import ContentsBox from "./contents/ContentsBox";
 import IndexContent from "./contents/IndexContent";
-import TitleContent from "./contents/TitleContent";
 import Content from "./contents/Content";
 
 const pageIndex = "03";
@@ -26,13 +25,10 @@ const SubSection3 = () => {
           numberPageIndex={numberPageIndex}
         >
           <IndexContent>{pageIndex}</IndexContent>
-          <TitleContent>
-            XOCIETY is a metaverse
-            <br />
-            with shooter mechanics at
-            <br />
-            its core
-          </TitleContent>
+          <TitleItemTop className="top">There is no such thing</TitleItemTop>
+          <TitleItemBottom className="bottom">
+            as a free lunch in XOCIETY
+          </TitleItemBottom>
           <Content>
             In XOCIETY, players are required to perform meaningful activities
             for ecosystem
@@ -61,4 +57,32 @@ const Box = styled.div`
     center;
   background-size: cover;
   margin-right: -100px;
+`;
+
+const TitleItemTop = styled.h3`
+  position: relative;
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 28px 40px 16px 28px;
+  z-index: -1;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: -100px;
+  font-size: 4.375rem;
+  line-height: 4.375rem;
+`;
+
+const TitleItemBottom = styled.h3`
+  color: black;
+  background: rgb(255, 254, 1);
+  z-index: 4;
+  padding: 28px 14px 22px 32px;
+  margin-left: 52px;
+  margin-top: -8px;
+  position: relative;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.375rem;
+  line-height: 4.375rem;
 `;
