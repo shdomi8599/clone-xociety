@@ -4,17 +4,19 @@ import styled from "@emotion/styled";
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionLayout from "./SubSectionLayout";
-import ContentsBox from "./contents/ContentsBox";
 import IndexContent from "./contents/IndexContent";
 import TitleContent from "./contents/TitleContent";
 import Content from "./contents/Content";
+import ContentsBox from "./contents/ContentsBox";
 
 const pageIndex = "01";
 
 const numberPageIndex = Number(pageIndex);
 
 const SubSection1 = () => {
-  const { bgRef, contentRef } = useScrollClassToggle({ numberPageIndex });
+  const { bgRef, contentRef, isOdd } = useScrollClassToggle({
+    numberPageIndex,
+  });
 
   return (
     <SubSectionLayout height={1181} zIndex={numberPageIndex}>
@@ -25,8 +27,7 @@ const SubSection1 = () => {
         height={95}
       />
       <Box ref={bgRef}>
-        <div></div>
-        <ContentsBox ref={contentRef} numberPageIndex={numberPageIndex}>
+        <ContentsBox contentRef={contentRef} isOdd={isOdd} numberPageIndex={numberPageIndex}>
           <IndexContent>{pageIndex}</IndexContent>
           <TitleContent>
             XOCIETY is a metaverse
