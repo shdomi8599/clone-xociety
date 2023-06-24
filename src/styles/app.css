@@ -62,3 +62,35 @@
   animation: even-reverseAnimateBackground 0.3s linear;
   animation-fill-mode: forwards;
 }
+
+@keyframes animateContents {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reverseAnimateContents {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.contents-animate {
+  animation: animateContents 0.3s linear;
+  animation-fill-mode: forwards;
+}
+
+.reverse-contents-animate {
+  animation: reverseAnimateContents 0.3s linear;
+  animation-fill-mode: forwards;
+}
