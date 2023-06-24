@@ -13,12 +13,12 @@ const pageIndex = "03";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection3 = () => {
-  const { bgRef } = useScrollClassToggle({ numberPageIndex });
+  const { bgRef, contentRef } = useScrollClassToggle({ numberPageIndex });
 
   return (
     <SubSectionLayout height={1181} zIndex={numberPageIndex}>
       <Box ref={bgRef}>
-        <ContentsBox numberPageIndex={numberPageIndex}>
+        <ContentsBox ref={contentRef} numberPageIndex={numberPageIndex}>
           <IndexContent>{pageIndex}</IndexContent>
           <TitleContent>
             XOCIETY is a metaverse

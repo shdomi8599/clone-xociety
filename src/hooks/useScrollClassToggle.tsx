@@ -7,6 +7,8 @@ type Props = {
 export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
   const bgRef = useRef<HTMLDivElement>(null);
 
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const targetTop = bgRef.current?.getBoundingClientRect().y;
@@ -29,5 +31,5 @@ export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  return { bgRef };
+  return { bgRef, contentRef };
 };

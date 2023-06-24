@@ -14,7 +14,7 @@ const pageIndex = "05";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection5 = () => {
-  const { bgRef } = useScrollClassToggle({ numberPageIndex });
+  const { bgRef, contentRef } = useScrollClassToggle({ numberPageIndex });
 
   return (
     <SubSectionLayout height={1461} zIndex={numberPageIndex}>
@@ -25,7 +25,11 @@ const SubSection5 = () => {
         height={131}
       />
       <Box ref={bgRef}>
-        <ContentsBox color="white" numberPageIndex={numberPageIndex}>
+        <ContentsBox
+          ref={contentRef}
+          color="white"
+          numberPageIndex={numberPageIndex}
+        >
           <IndexContent color="white">{pageIndex}</IndexContent>
           <TitleContent>
             ALL Your Interoperable NFTs

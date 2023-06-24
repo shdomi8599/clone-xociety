@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 
 import { ContentProps } from "@/types";
+import { RefObject } from "react";
 
 interface Props extends ContentProps {
   numberPageIndex: number;
   color?: string;
+  ref: RefObject<HTMLDivElement>;
 }
 
 const ContentsBox = (props: Props) => {
