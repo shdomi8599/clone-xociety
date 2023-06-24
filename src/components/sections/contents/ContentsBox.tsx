@@ -1,27 +1,36 @@
 import styled from "@emotion/styled";
 
-import { ContentProps } from "@/types";
-import { RefObject } from "react";
+import { ReactNode, RefObject } from "react";
 
-interface Props extends ContentProps {
+type Props = {
   numberPageIndex: number;
+  isOdd: boolean;
+  children: ReactNode;
   color?: string;
-  ref: RefObject<HTMLDivElement>;
-}
+  contentRef?: RefObject<HTMLDivElement>;
+};
 
-const ContentsBox = (props: Props) => {
-  const isOdd = props.numberPageIndex % 2 === 1;
-
-  return <Box isOdd={isOdd} {...props} />;
+const ContentsBox = ({
+  numberPageIndex,
+  color,
+  contentRef,
+  children,
+  isOdd,
+}: Props) => {
+  return (
+    <Box
+      isOdd={isOdd}
+      numberPageIndex={numberPageIndex}
+      color={color}
+      children={children}
+      ref={contentRef}
+    />
+  );
 };
 
 export default ContentsBox;
 
-interface BoxProps extends Props {
-  isOdd: boolean;
-}
-
-const Box = styled.div<BoxProps>`
+const Box = styled.div<Props>`
   position: relative;
   z-index: ${({ numberPageIndex }) => numberPageIndex + 1};
   margin-left: ${({ isOdd }) => (isOdd ? "74px" : "")};
