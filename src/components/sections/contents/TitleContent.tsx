@@ -9,7 +9,6 @@ const TitleContent = (props: ContentProps) => {
 export default TitleContent;
 
 const Box = styled.h3`
-  color: #1f2535;
   margin-top: -100px;
   font-style: normal;
   font-weight: 700;

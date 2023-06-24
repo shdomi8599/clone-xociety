@@ -9,7 +9,6 @@ const Content = (props: ContentProps) => {
 export default Content;
 
 const Box = styled.p`
-  color: rgb(31, 37, 53);
   margin-top: 20px;
   white-space: nowrap;
   font-style: normal;
