@@ -14,7 +14,7 @@ const pageIndex = "05";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection5 = () => {
-  const { target } = useScrollClassToggle({ numberPageIndex });
+  const { bgRef } = useScrollClassToggle({ numberPageIndex });
 
   return (
     <SubSectionLayout height={1461} zIndex={numberPageIndex}>
@@ -24,7 +24,7 @@ const SubSection5 = () => {
         width={171}
         height={131}
       />
-      <Box ref={target}>
+      <Box ref={bgRef}>
         <ContentsBox color="white" numberPageIndex={numberPageIndex}>
           <IndexContent color="white">{pageIndex}</IndexContent>
           <TitleContent>
