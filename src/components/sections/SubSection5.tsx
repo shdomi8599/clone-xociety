@@ -27,6 +27,7 @@ const SubSection5 = () => {
         height={131}
       />
       <Box ref={bgRef}>
+        <ItemBgBox />
         <ContentsBox
           isOdd={isOdd}
           contentRef={contentRef}
@@ -68,10 +69,17 @@ const Box = styled.div`
   height: 100%;
   background: url("/${pageIndex}/${pageIndex}-bg.webp") no-repeat center center;
   background-size: cover;
-  justify-content: center;
   margin-top: -10px;
   padding-top: 100px;
   width: 100%;
   position: relative;
   overflow: hidden;
+`;
+
+const ItemBgBox = styled.div`
+  background: url("/${pageIndex}/${pageIndex}-item.webp") no-repeat center
+    center;
+  height: 80%;
+  width: 100%;
+  position: absolute;
 `;
