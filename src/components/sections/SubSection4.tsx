@@ -40,9 +40,10 @@ const SubSection4 = () => {
             world on Land NFTs
           </TitleContent>
           <Content>
-            XOCIETY's Dev team has extensively researched the current Web3
+            XOCIETY&apos;s Dev team has extensively researched the current Web3
             <br />
-            environment as well as the current experience of the "Metaverse".
+            environment as well as the current experience of the
+            &quot;Metaverse&quot;.
             <br />
             presented top-down to users in which land sale precedes development.
             <br />

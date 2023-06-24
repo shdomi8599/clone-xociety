@@ -44,10 +44,10 @@ const SubSection2 = () => {
             <br />
             meaningful character progression. A highly detailed,
             <br />
-            fully immersive visualization of the player's progression
+            fully immersive visualization of the player&apos;s progression
             <br />
-            allows players to "empathize" & "immerse" themselves into a virtual
-            self.
+            allows players to &quot;empathize&quot; & &quot;immerse&quot;
+            themselves into a virtual self.
           </Content>
         </ContentsBox>
       </Box>

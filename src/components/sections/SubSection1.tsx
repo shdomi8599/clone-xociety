@@ -27,7 +27,11 @@ const SubSection1 = () => {
         height={95}
       />
       <Box ref={bgRef}>
-        <ContentsBox contentRef={contentRef} isOdd={isOdd} numberPageIndex={numberPageIndex}>
+        <ContentsBox
+          contentRef={contentRef}
+          isOdd={isOdd}
+          numberPageIndex={numberPageIndex}
+        >
           <IndexContent>{pageIndex}</IndexContent>
           <TitleContent>
             XOCIETY is a metaverse
@@ -46,8 +50,8 @@ const SubSection1 = () => {
             <br />
             team of over 50 developers with decades of experience in the tech
             <br />
-            and web2 gaming fields. Join XOCIETY if you're ready to build your
-            own metaverse!
+            and web2 gaming fields. Join XOCIETY if you&apos;re ready to build
+            your own metaverse!
           </Content>
         </ContentsBox>
       </Box>

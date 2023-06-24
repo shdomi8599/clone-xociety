@@ -30,7 +30,7 @@ const SubSection6 = () => {
           <Content>
             Click here to read the full article
             <br />
-            on "What is XOCIETY?"
+            on &quot;What is XOCIETY?&quot;
           </Content>
         </ContentsBox>
       </Box>

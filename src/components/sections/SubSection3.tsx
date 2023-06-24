@@ -40,8 +40,8 @@ const SubSection3 = () => {
             development in order to obtain valuable assets. Gamers pay for
             engaging content
             <br />
-            and this is coupled with XOCIETY's traditional revenue generating
-            models, which
+            and this is coupled with XOCIETY&apos;s traditional revenue
+            generating models, which
             <br />
             will make a sustainable economy possible.
           </Content>
