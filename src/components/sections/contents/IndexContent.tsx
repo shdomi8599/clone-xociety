@@ -13,7 +13,7 @@ const IndexContent = (props: Props) => {
 export default IndexContent;
 
 const Box = styled.h2`
-  -webkit-text-stroke: 1px ${({ color }) => (color ? color : "#1f2535")};
+  -webkit-text-stroke: 1px ${({ color }) => (color ? color : "#1f2535")} !important;
   color: transparent;
   font-size: 17.625rem;
 `;
