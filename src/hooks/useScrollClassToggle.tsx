@@ -27,9 +27,13 @@ export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
         !isView
       );
 
-      contentRef.current?.classList.toggle("contents-animate", isView);
+      contentRef.current?.classList.toggle(
+        "contents-animate", isView
+        );
 
-      contentRef.current?.classList.toggle("reverse-contents-animate", !isView);
+      contentRef.current?.classList.toggle(
+        "reverse-contents-animate", !isView
+        );
     };
 
     window.addEventListener("scroll", handleScroll);
