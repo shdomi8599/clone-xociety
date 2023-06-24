@@ -4,13 +4,17 @@ import styled from "@emotion/styled";
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
+import ContentsBox from "./contents/ContentsBox";
+import IndexContent from "./contents/IndexContent";
+import TitleContent from "./contents/TitleContent";
+import Content from "./contents/Content";
 
 const pageIndex = "05";
 
 const numberPageIndex = Number(pageIndex);
 
 const SubSection5 = () => {
-  const { target } = useScrollClassToggle({ numberPageIndex});
+  const { target } = useScrollClassToggle({ numberPageIndex });
 
   return (
     <SubSectionForm height={1461} zIndex={numberPageIndex}>
@@ -20,7 +24,24 @@ const SubSection5 = () => {
         width={171}
         height={131}
       />
-      <Box ref={target}></Box>
+      <Box ref={target}>
+        <ContentsBox color="white" numberPageIndex={numberPageIndex}>
+          <IndexContent color="white">{pageIndex}</IndexContent>
+          <TitleContent>
+            ALL Your Interoperable NFTs
+            <br />
+            Become REALITY
+          </TitleContent>
+          <Content>
+            XOCIETY aims to achieve two-way interoperability of NFTs.
+            <br />
+            Deep integration into Internal & External Transfers within XOCIETY.
+            <br />
+            Actively partnering with major projects to achieve the Web3 promise
+            of interoperability.
+          </Content>
+        </ContentsBox>
+      </Box>
     </SubSectionForm>
   );
 };

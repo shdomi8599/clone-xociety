@@ -4,6 +4,10 @@ import styled from "@emotion/styled";
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
+import ContentsBox from "./contents/ContentsBox";
+import IndexContent from "./contents/IndexContent";
+import TitleContent from "./contents/TitleContent";
+import Content from "./contents/Content";
 
 const pageIndex = "02";
 
@@ -20,7 +24,26 @@ const SubSection2 = () => {
         width={304}
         height={97}
       />
-      <Box ref={target}></Box>
+      <Box ref={target}>
+        <ContentsBox color="white" numberPageIndex={numberPageIndex}>
+          <IndexContent color="white">{pageIndex}</IndexContent>
+          <TitleContent>
+            AAA Shooter Action
+            <br />
+            with RPG Progression
+          </TitleContent>
+          <Content>
+            Multiple systems are designed to deliver deep and
+            <br />
+            meaningful character progression. A highly detailed,
+            <br />
+            fully immersive visualization of the player's progression
+            <br />
+            allows players to "empathize" & "immerse" themselves into a virtual
+            self.
+          </Content>
+        </ContentsBox>
+      </Box>
     </SubSectionForm>
   );
 };

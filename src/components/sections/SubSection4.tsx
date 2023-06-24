@@ -4,6 +4,10 @@ import styled from "@emotion/styled";
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
+import ContentsBox from "./contents/ContentsBox";
+import IndexContent from "./contents/IndexContent";
+import TitleContent from "./contents/TitleContent";
+import Content from "./contents/Content";
 
 const pageIndex = "04";
 
@@ -20,7 +24,29 @@ const SubSection4 = () => {
         width={216}
         height={125}
       />
-      <Box ref={target}></Box>
+      <Box ref={target}>
+        <ContentsBox color="white" numberPageIndex={numberPageIndex}>
+          <IndexContent color="white">{pageIndex}</IndexContent>
+          <TitleContent>
+            Build your own
+            <br />
+            world on Land NFTs
+          </TitleContent>
+          <Content>
+            XOCIETY's Dev team has extensively researched the current Web3
+            <br />
+            environment as well as the current experience of the "Metaverse".
+            <br />
+            presented top-down to users in which land sale precedes development.
+            <br />
+            XOCIETY will be built step by step by users who develop the
+            metaverse
+            <br />
+            and in turn are rewarded by opportunities for land sale and
+            resources.
+          </Content>
+        </ContentsBox>
+      </Box>
     </SubSectionForm>
   );
 };

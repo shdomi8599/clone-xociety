@@ -3,6 +3,10 @@ import styled from "@emotion/styled";
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
 import SubSectionForm from "./SubSectionForm";
+import ContentsBox from "./contents/ContentsBox";
+import IndexContent from "./contents/IndexContent";
+import TitleContent from "./contents/TitleContent";
+import Content from "./contents/Content";
 
 const pageIndex = "06";
 
@@ -13,7 +17,17 @@ const SubSection6 = () => {
 
   return (
     <SubSectionForm height={1191} zIndex={numberPageIndex}>
-      <Box ref={target}></Box>
+      <Box ref={target}>
+        <ContentsBox numberPageIndex={numberPageIndex}>
+          <IndexContent>{pageIndex}</IndexContent>
+          <TitleContent>Read more on XOCIETY</TitleContent>
+          <Content>
+            Click here to read the full article
+            <br />
+            on "What is XOCIETY?"
+          </Content>
+        </ContentsBox>
+      </Box>
     </SubSectionForm>
   );
 };
