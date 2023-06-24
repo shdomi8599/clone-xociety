@@ -1,10 +1,15 @@
 import { useEffect, useRef } from "react";
+import { useSetRecoilState } from "recoil";
+
+import { isNavColorState } from "@/recoil/atom";
 
 type Props = {
   numberPageIndex: number;
 };
 
 export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
+  const setIsNavColor = useSetRecoilState(isNavColorState);
+
   const bgRef = useRef<HTMLDivElement>(null);
 
   const contentRef = useRef<HTMLDivElement>(null);
@@ -29,11 +34,17 @@ export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
 
       contentRef.current?.classList.toggle(
         "contents-animate", isView
-        );
+      );
 
       contentRef.current?.classList.toggle(
         "reverse-contents-animate", !isView
-        );
+      );
+
+      if (numberPageIndex === 4 || numberPageIndex === 5) {
+        const isNavWhite = Math.abs(targetTop as number) < 1200;
+
+        isNavWhite ? setIsNavColor(true) : setIsNavColor(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
