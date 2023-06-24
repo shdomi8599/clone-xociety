@@ -3,7 +3,7 @@ import Head from "next/head";
 import { SUB_SECTION_ITEMS } from "@/constants/constants";
 
 import Header from "@/components/common/Header";
-import MainSection from "@/components/section/MainSection";
+import MainSection from "@/components/sections/MainSection";
 
 const Home = () => {
   return (
