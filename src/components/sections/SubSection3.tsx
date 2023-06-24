@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
 
-import SubSectionForm from "./SubSectionForm";
+import SubSectionLayout from "./SubSectionLayout";
 import ContentsBox from "./contents/ContentsBox";
 import IndexContent from "./contents/IndexContent";
 import TitleContent from "./contents/TitleContent";
@@ -16,7 +16,7 @@ const SubSection3 = () => {
   const { target } = useScrollClassToggle({ numberPageIndex });
 
   return (
-    <SubSectionForm height={1181} zIndex={numberPageIndex}>
+    <SubSectionLayout height={1181} zIndex={numberPageIndex}>
       <Box ref={target}>
         <ContentsBox numberPageIndex={numberPageIndex}>
           <IndexContent>{pageIndex}</IndexContent>
@@ -41,7 +41,7 @@ const SubSection3 = () => {
           </Content>
         </ContentsBox>
       </Box>
-    </SubSectionForm>
+    </SubSectionLayout>
   );
 };
 

@@ -8,11 +8,11 @@ type Props = {
   children: ReactNode;
 };
 
-const SubSectionForm = ({ height, zIndex, children }: Props) => {
+const SubSectionLayout = ({ height, zIndex, children }: Props) => {
   return <Box height={height} zIndex={zIndex} children={children} />;
 };
 
-export default SubSectionForm;
+export default SubSectionLayout;
 
 const Box = styled.section<Props>`
   width: 100%;
