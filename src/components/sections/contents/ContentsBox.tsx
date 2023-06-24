@@ -22,9 +22,10 @@ const ContentsBox = ({
       isOdd={isOdd}
       numberPageIndex={numberPageIndex}
       color={color}
-      children={children}
       ref={contentRef}
-    />
+    >
+      {children}
+    </Box>
   );
 };
 
