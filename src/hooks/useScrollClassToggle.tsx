@@ -40,8 +40,8 @@ export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
         "reverse-contents-animate", !isView
       );
 
-      if (numberPageIndex === 4 || numberPageIndex === 5) {
-        const isNavWhite = Math.abs(targetTop as number) < 1200;
+      if (numberPageIndex === 5) {
+        const isNavWhite = Math.abs(targetTop as number) < 1300;
 
         isNavWhite ? setIsNavColor(true) : setIsNavColor(false);
       }
