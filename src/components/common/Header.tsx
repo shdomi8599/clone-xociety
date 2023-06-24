@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
@@ -8,11 +9,14 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-
 import { Fab } from "@mui/material";
+
 import { SECTIONS } from "@/constants/constants";
+import { isNavColorState } from "@/recoil/atom";
 
 const Header = () => {
+  const isNavColor = useRecoilValue(isNavColorState);
+
   const [scrollHeight, setScrollHeight] = useState(0);
 
   const handleScroll = () => {
@@ -22,7 +26,7 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <>
       <BackBox />
@@ -38,7 +42,9 @@ const Header = () => {
             />
             <NavItemBox>
               {SECTIONS.map((section) => (
-                <NavItem key={section}>{section}</NavItem>
+                <NavItem isnavcolor={String(isNavColor)} key={section}>
+                  {section}
+                </NavItem>
               ))}
             </NavItemBox>
             <AppBtn variant="extended">
@@ -104,8 +110,12 @@ const NavItemBox = styled(Box)`
   padding-right: 50px;
 `;
 
-const NavItem = styled(Button)`
-  color: black;
+type NavItemProps = {
+  isnavcolor: string;
+};
+
+const NavItem = styled(Button)<NavItemProps>`
+  color: ${({ isnavcolor }) => (isnavcolor === "false" ? "black" : "white")};
   display: block;
   font-family: var(--font-family);
   font-size: 18px;
