@@ -8,17 +8,25 @@ interface Props extends ContentProps {
 }
 
 const ContentsBox = (props: Props) => {
-  return <Box {...props} />;
+  const isOdd = props.numberPageIndex % 2 === 1;
+
+  return <Box isOdd={isOdd} {...props} />;
 };
 
 export default ContentsBox;
 
-const Box = styled.div<Props>`
+interface BoxProps extends Props {
+  isOdd: boolean;
+}
+
+const Box = styled.div<BoxProps>`
   position: relative;
   z-index: ${({ numberPageIndex }) => numberPageIndex + 1};
-  margin-left: 74px;
+  margin-left: ${({ isOdd }) => (isOdd ? "74px" : "")};
+  margin-right: ${({ isOdd }) => (isOdd ? "" : "74px")};
   margin-top: -124px;
   opacity: 1;
+  text-align: ${({ isOdd }) => (isOdd ? "" : "end")};
 
   * {
     font-family: var(--font-family);
