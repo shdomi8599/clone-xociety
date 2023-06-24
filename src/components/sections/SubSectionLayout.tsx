@@ -8,8 +8,8 @@ type Props = {
   children: ReactNode;
 };
 
-const SubSectionLayout = ({ height, zIndex, children }: Props) => {
-  return <Box height={height} zIndex={zIndex} children={children} />;
+const SubSectionLayout = (props: Props) => {
+  return <Box {...props} />;
 };
 
 export default SubSectionLayout;
