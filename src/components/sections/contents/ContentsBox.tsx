@@ -4,10 +4,11 @@ import { ContentProps } from "@/types";
 
 interface Props extends ContentProps {
   numberPageIndex: number;
+  color?: string;
 }
 
-const ContentsBox = ({ numberPageIndex, children }: Props) => {
-  return <Box numberPageIndex={numberPageIndex} children={children} />;
+const ContentsBox = (props: Props) => {
+  return <Box {...props} />;
 };
 
 export default ContentsBox;
@@ -21,6 +22,7 @@ const Box = styled.div<Props>`
 
   * {
     font-family: var(--font-family);
+    color: ${({ color }) => (color ? color : "#1f2535")};
   }
 
   div {
