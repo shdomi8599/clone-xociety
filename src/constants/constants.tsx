@@ -1,9 +1,9 @@
-import SubSection1 from "@/components/section/SubSection1";
-import SubSection2 from "@/components/section/SubSection2";
-import SubSection3 from "@/components/section/SubSection3";
-import SubSection4 from "@/components/section/SubSection4";
-import SubSection5 from "@/components/section/SubSection5";
-import SubSection6 from "@/components/section/SubSection6";
+import SubSection1 from "@/components/sections/SubSection1";
+import SubSection2 from "@/components/sections/SubSection2";
+import SubSection3 from "@/components/sections/SubSection3";
+import SubSection4 from "@/components/sections/SubSection4";
+import SubSection5 from "@/components/sections/SubSection5";
+import SubSection6 from "@/components/sections/SubSection6";
 
 export const SECTIONS = [
   "what is xociety",
