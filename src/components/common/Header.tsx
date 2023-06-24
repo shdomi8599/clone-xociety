@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import { useEffect, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,7 +11,6 @@ import Button from "@mui/material/Button";
 
 import { Fab } from "@mui/material";
 import { SECTIONS } from "@/constants/constants";
-import { useEffect, useState } from "react";
 
 const Header = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -29,7 +29,7 @@ const Header = () => {
         <Container maxWidth={false}>
           <ToolBarBox disableGutters>
             <LogoImage
-              scrollHeight={scrollHeight}
+              scrollheight={scrollHeight}
               src={"/logo/xociety-header-bi.svg"}
               height={61}
               width={168}
@@ -88,11 +88,11 @@ const ToolBarBox = styled(Toolbar)`
 `;
 
 type LogoImageProps = {
-  scrollHeight: number;
+  scrollheight: number;
 };
 
 const LogoImage = styled(Image)<LogoImageProps>`
-  opacity: ${({ scrollHeight }) => (scrollHeight > 600 ? 0 : 1)};
+  opacity: ${({ scrollheight }) => (scrollheight > 600 ? 0 : 1)};
 `;
 
 const NavItemBox = styled(Box)`
