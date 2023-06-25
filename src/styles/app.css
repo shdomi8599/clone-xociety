@@ -7,7 +7,7 @@
   font-size: 16px;
 }
 
-@keyframes odd-animateBackground {
+@keyframes odd-animate-background {
   0% {
     background-position: -100px;
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes odd-reverseAnimateBackground {
+@keyframes odd-reverse-animate-background {
   0% {
     background-position: 0px;
   }
@@ -25,7 +25,7 @@
   }
 }
 
-@keyframes even-animateBackground {
+@keyframes even-animate-background {
   0% {
     background-position: 100px;
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@keyframes even-reverseAnimateBackground {
+@keyframes even-reverse-animate-background {
   0% {
     background-position: 0px;
   }
@@ -44,26 +44,26 @@
 }
 
 .odd-animate {
-  animation: odd-animateBackground 0.3s linear;
+  animation: odd-animate-background 0.3s linear;
   animation-fill-mode: forwards;
 }
 
 .odd-reverse-animate {
-  animation: odd-reverseAnimateBackground 0.3s linear;
+  animation: odd-reverse-animate-background 0.3s linear;
   animation-fill-mode: forwards;
 }
 
 .even-animate {
-  animation: even-animateBackground 0.3s linear;
+  animation: even-animate-background 0.3s linear;
   animation-fill-mode: forwards;
 }
 
 .even-reverse-animate {
-  animation: even-reverseAnimateBackground 0.3s linear;
+  animation: even-reverse-animate-background 0.3s linear;
   animation-fill-mode: forwards;
 }
 
-@keyframes animateContents {
+@keyframes animate-contents {
   0% {
     opacity: 0;
     transform: translateY(-100px);
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes reverseAnimateContents {
+@keyframes reverse-animate-contents {
   0% {
     opacity: 1;
     transform: none;
@@ -86,11 +86,11 @@
 }
 
 .contents-animate {
-  animation: animateContents 0.3s linear;
+  animation: animate-contents 0.3s linear;
   animation-fill-mode: forwards;
 }
 
 .reverse-contents-animate {
-  animation: reverseAnimateContents 0.3s linear;
+  animation: reverse-animate-contents 0.3s linear;
   animation-fill-mode: forwards;
 }
