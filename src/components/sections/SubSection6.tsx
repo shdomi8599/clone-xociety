@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
+import { useScrollToggle } from "@/hooks/useScrollToggle";
 
 import SubSectionLayout from "./SubSectionLayout";
 import ContentsBox from "./contents/ContentsBox";
@@ -13,7 +13,7 @@ const pageIndex = "06";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection6 = () => {
-  const { bgRef, contentRef, isOdd } = useScrollClassToggle({
+  const { bgRef, contentRef, isOdd } = useScrollToggle({
     numberPageIndex,
   });
 

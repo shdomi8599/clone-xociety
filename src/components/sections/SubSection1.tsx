@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
 
-import { useScrollClassToggle } from "@/hooks/useScrollClassToggle";
+import { useScrollToggle } from "@/hooks/useScrollToggle";
 
 import SubSectionLayout from "./SubSectionLayout";
 import IndexContent from "./contents/IndexContent";
@@ -14,7 +14,7 @@ const pageIndex = "01";
 const numberPageIndex = Number(pageIndex);
 
 const SubSection1 = () => {
-  const { bgRef, contentRef, isOdd } = useScrollClassToggle({
+  const { bgRef, contentRef, isOdd } = useScrollToggle({
     numberPageIndex,
   });
 

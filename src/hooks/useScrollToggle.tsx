@@ -7,7 +7,7 @@ type Props = {
   numberPageIndex: number;
 };
 
-export const useScrollClassToggle = ({ numberPageIndex }: Props) => {
+export const useScrollToggle = ({ numberPageIndex }: Props) => {
   const setIsNavColor = useSetRecoilState(isNavColorState);
 
   const bgRef = useRef<HTMLDivElement>(null);
