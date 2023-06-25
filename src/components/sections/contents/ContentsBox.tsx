@@ -2,13 +2,10 @@ import styled from "@emotion/styled";
 
 import { ReactNode, RefObject } from "react";
 
-type Props = {
-  numberPageIndex: number;
-  isOdd: boolean;
-  children: ReactNode;
+interface Props extends BoxProps {
   color?: string;
-  contentRef?: RefObject<HTMLDivElement>;
-};
+  contentRef: RefObject<HTMLDivElement>;
+}
 
 const ContentsBox = ({
   numberPageIndex,
@@ -31,7 +28,13 @@ const ContentsBox = ({
 
 export default ContentsBox;
 
-const Box = styled.div<Props>`
+interface BoxProps {
+  numberPageIndex: number;
+  isOdd: boolean;
+  children: ReactNode;
+}
+
+const Box = styled.div<BoxProps>`
   position: relative;
   z-index: ${({ numberPageIndex }) => numberPageIndex + 1};
   margin-left: ${({ isOdd }) => (isOdd ? "74px" : "")};
